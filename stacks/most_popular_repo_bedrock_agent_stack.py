@@ -101,8 +101,8 @@ class MostPopularRepoBedrockAgentStack(Stack):
             timeout=Duration.seconds(60),
             memory_size=512,
             environment={
-                "BEDROCK_AGENT_ID": "INSERT BEDROCK AGENT ID HERE",
-                "BEDROCK_AGENT_ALIAS_ID": "INSERT BEDROCK AGENT ALIAS ID HERE",
+                "BEDROCK_AGENT_ID": "YEYCW2K0VV",
+                "BEDROCK_AGENT_ALIAS_ID": "X7HYS7RWIR",
             },
         )
         lookup_repo_lambda.add_to_role_policy(bedrock_agent_access_policy)
@@ -127,8 +127,8 @@ class MostPopularRepoBedrockAgentStack(Stack):
             timeout=Duration.seconds(60),
             memory_size=512,
             environment={
-                "BEDROCK_AGENT_ID": "INSERT BEDROCK AGENT ID HERE",
-                "BEDROCK_AGENT_ALIAS_ID": "INSERT BEDROCK AGENT ALIAS ID HERE",
+                "BEDROCK_AGENT_ID": "YEYCW2K0VV",
+                "BEDROCK_AGENT_ALIAS_ID": "X7HYS7RWIR",
             },
         )
         summarize_repo_lambda.add_to_role_policy(bedrock_agent_access_policy)

@@ -30,7 +30,7 @@ class WebappStack(Stack):
             max_azs=2,
         )
 
-        domain_name = f"bedrock-serverless-prompt-chaining.{parent_domain}"
+        domain_name = f"streamlit-apps.{parent_domain}"
         hosted_zone = route53.HostedZone.from_lookup(
             self, "Zone", domain_name=parent_domain
         )
@@ -38,7 +38,7 @@ class WebappStack(Stack):
             self,
             "Cert",
             domain_name=domain_name,
-            validation=acm.CertificateValidation.from_dns(hosted_zone=hosted_zone),
+            validation=acm.CertificateValidation.from_dns(hosted_zone)
         )
 
         cluster = ecs.Cluster(self, "Cluster", vpc=vpc)
@@ -89,7 +89,7 @@ class WebappStack(Stack):
             workflow.grant_task_response(fargate_service.task_definition.task_role)
 
         # Add Cognito for authentication
-        cognito_domain_prefix = "bedrock-serverless-prompt-chaining-demo"
+        cognito_domain_prefix = "streamlit-apps"
         user_pool = cognito.UserPool(
             self,
             "StreamlitUserPool",

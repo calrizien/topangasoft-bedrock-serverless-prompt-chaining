@@ -58,8 +58,8 @@ class PipelineStack(Stack):
         source_output = codepipeline.Artifact("SourceArtifact")
         source_action = actions.CodeStarConnectionsSourceAction(
             action_name="GitHubSource",
-            owner="aws-samples",
-            repo="amazon-bedrock-serverless-prompt-chaining",
+            owner="calrizien",
+            repo="topangasoft-bedrock-serverless-prompt-chaining",
             branch="main",
             connection_arn=github_connection.attr_connection_arn,
             output=source_output,
